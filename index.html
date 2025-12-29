@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ONEBOXWEB</title>
+<style>
+/* ===== General Reset ===== */
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
+body { background:#f5f5f5; color:#333; min-height:100vh; overflow-x:hidden;
+
+  
+  background-image:url("J1.jpeg");
+  background-size:cover;
+  width:100%;
+  background-position:center;
+  background-attachment: fixed;
+  
+  
+}
+/* ===== Header ===== */
+header {
+  width:100%; height:45px; background:#ff6f61; display:flex; justify-content:center; align-items:center;
+  font-family: Georgia; font-size:20px; letter-spacing:3px; color:white; position:sticky; top:0; z-index:999;
+  background-image: url("J2.jpeg"); background-size:cover; background-position:center; background-attachment:fixed;
+    text-align:center;
+    padding-right:16px;
+}
+
+/* ===== Navigation ===== */
+nav {
+  width:100%; background:#e94e3f; display:inline-block;justify-content:center; gap:80px; font-size:15px;
+  font-family: Georgia;top:45px; z-index:998;word-spacing:100px;
+  
+  position:sticky;
+  background-image:url("J3.jpeg");
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
+  text-align:center;
+  height:44px;
+  padding-top:3px;
+  border-bottom:2px solid black;
+  padding-bottom:7.50px;
+}
+nav a {color:white; text-decoration:none; font-weight:bold; transition:0.3s; font-size:20px;}
+nav a:hover { color:yellow; }
+
+.v1 {
+  width:100%; display:inline-block;justify-content:center; font-size:15px;
+  font-family: Georgia;top:89px;
+  
+  position:sticky;
+  background-image:url("J3.jpeg");
+  background-size:cover;
+  background-position:center;
+  text-align:center;
+  height:44px;
+  padding-top:3px;
+  border-bottom:2px solid black;
+  z-index:998;
+  background-attachment: fixed;
+  padding-bottom:7.50px;
+
+}
+.v1 a {color:green; text-decoration:none; font-weight:bold; transition:0.3s; }
+.v1 a:hover { color:yellow; }
+/* ===== Search ===== */
+/* ===== Search ===== */
+.search-container {
+  width:90%; max-width:900px; margin:10px auto; position:relative;
+}
+.search-container input {
+  width:100%; padding:15px 50px 15px 20px; border-radius:45px; border:2.25px solid black; font-size:1.5em;
+  outline:none; height:60px;
+ 
+  
+}
+.search-container button {
+  position:absolute; top:50%; transform:translateY(-50%); border:none; background:none; cursor:pointer;
+}
+
+#searchBtn { right:5%; margin-top:1.5px;}
+#searchBtn img { width:30px; height:30px;background-color:green;border:2px solid black;border-radius:25%;}
+#clearBtn { right:19%; font-size:30px; display:inline-block;}
+
+/* Suggestions */
+#suggestions { width:50%; margin:10px auto; text-align:center; font-size:1em; }
+#suggestions div { padding:5px; cursor:pointer; border-bottom:1px solid #ccc; background:rgba(0,0,0,0.6); color:white; }
+#suggestions div:hover { background:yellow; color:black; }
+
+/* ===== Slider ===== */
+.slider {width:90%; max-width:900px; margin:10px auto; overflow:hidden; border:2px solid transparent; height:400px; }
+.slides { display:flex; transition: transform 1s ease-in-out; height:400px; }
+.slide { min-width:100%; height:400px; }
+.slide img { width:100%; height:100%; object-fit:cover; }
+.dots { text-align:center; margin:10px 0; }
+.dot { display:inline-block; width:7px; height:7px; margin:0 10px; background:white; border-radius:50%; cursor:pointer; }
+.dot.active { background:black; }
+
+/* ===== Ticker ===== */
+.ticker { width:100%; margin:5px auto; overflow:hidden; white-space:nowrap; background:#333; color:white; padding-top:7px; font-size:2px; height:47px;}
+.ticker-text { display:inline-block; animation:tickerAnim 20s linear infinite; letter-spacing:3px; }
+@keyframes tickerAnim {0%{transform:translateX(100%);} 100%{transform:translateX(-100%);}}
+
+/* ===== Typewriter ===== */
+.typewriter-box { width:50%; max-width:600px; margin:5px auto; padding:20px 30px; border:1.25px solid black; border-radius:4px; background:brown; color:white; font-size:1.2em; letter-spacing:2px; background-image:url('7J.jpeg');e background-size:cover; background-position:center;
+  margin-left:1px;
+}
+.cursor { display:inline-block; width:2px; background:yellow; margin-left:5px; animation: blink 0.7s infinite; }
+@keyframes blink {0%,100%{opacity:1;}50%{opacity:0;}}
+
+/* ===== Categories ===== */
+#categories { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; width:90%; margin:20px auto; }
+.category {
+  flex:1 1 300px; max-width:300px; min-height:400px; background:#fff; border-radius:15px; overflow:hidden;
+  box-shadow:0 0 15px rgba(0,0,0,0.3); display:flex; flex-direction:column; transition:0.3s;
+}
+.category:hover { transform:translateY(-10px); box-shadow:0 0 25px rgba(0,0,0,0.5); }
+.category img { width:100%; height:200px; object-fit:cover; }
+.category h3 { padding:10px; font-family:Georgia; font-size:1.2em; }
+.category p { padding:0 10px; flex:1; font-size:0.9em; line-height:1.5em; }
+.category a { text-align:center; padding:10px; margin:10px; text-decoration:none; background:green; color:white; border-radius:10px; font-weight:bold; transition:0.3s; }
+.category a:hover { background:yellow; color:black; }
+
+/* ===== Highlight ===== */
+.highlight { background:yellow; font-weight:bold; color:black; }
+
+/* ===== Responsive ===== */
+@media(max-width:768px){
+  nav { flex-direction:column; gap:10px; font-size:1.2em; }
+  .slider, .slides, .slide { height:250px; }
+  .category { min-height:300px; }
+  .category img { height:150px; }
+  .typewriter-box { font-size:1em; padding:15px; }
+}
+@media(max-width:480px){
+  .search-container input { font-size:1em; padding:10px 40px; height:50px; }
+  .ticker { font-size:1em; padding:8px; }
+}
+#searchInput{
+  padding-right:90px;
+}
+/* ===== Smooth Scroll ===== */
+html { scroll-behavior:smooth; }
+</style>
+</head>
+<body>
+  <div class="e1"></div>
+
+<header>ONEBOXWEB</header>
+
+<nav>
+  <a href="#">Home</a>
+  <a href="#">Contact</a>
+  </nav>
+  <div class="v1"><a href="ONEBOX.APK/ONEBOX.apk" download>⬇️DOWNLOAD ONEBOX APK FILE</a></div>
+
+<div class="search-container">
+  <input id="searchInput" placeholder="Search...">
+  <button id="searchBtn"><img src="https://img.icons8.com/ios-filled/50/search--v1.png"/></button>
+  <button id="clearBtn">×</button>
+</div>
+<div id="suggestions"></div>
+
+<div class="slider">
+  <div class="slides" id="slides">
+    <div class="slide"><img src="4J.jpeg" alt="image1"></div>
+    <div class="slide"><img src="5J.jpeg" alt="image2"></div>
+    <div class="slide"><img src="6J.jpeg" alt="image3"></div>
+  </div>
+</div>
+<div class="dots" id="dots"></div>
+
+<div class="ticker"><div class="ticker-text">"Aik App… Saari Apps — OneBox Aap Ki Zindagi Asaan!"</div></div>
+
+<div class="typewriter-box"><span id="animatedText"></span><span class="cursor"></span></div>
+
+<div id="categories">
+  <div class="category">
+    <img src="4J.jpeg">
+    <h3>SHOPPING WEBSITE</h3>
+    <p>Latest gadgets, phones, laptops, and accessories. Enjoy exclusive discounts and fast delivery.clothes, shoes, and accessories for all. Stylish designs and premium quality.Decor, furniture, kitchen essentials, and more. Make your home beautiful.</p>
+    <a href="https://shahis70.github.io/bestshop1/">OPEN</a>
+  </div>
+  <div class="category">
+    <img src="5J.jpeg">
+    <h3>ENGLISH SPEAKING COURSE</h3>
+    <p>The one-box app offers an English speaking course for beginners.It helps users learn to speak English confidently.The app teaches pronunciation and common phrases.Daily practice lessons improve speaking skills.Users can listen to real-life conversations.The course focuses on vocabulary and sentence formation.Interactive exercises make learning easy and fun.Users can practice speaking anywhere using the app.The app tracks progress and gives feedback.This one-box app makes learning English simple and fast.
+</p>
+    <a href="https://english-speaking-course1.netlify.app/">OPEN</a>
+  </div>
+  <div class="category">
+    <img src="6J.jpeg">
+    <h3>Weather</h3>
+    <p>The one-box weather app shows the current temperature clearly.It provides real-time weather updates.The app displays humidity, wind speed, and sky conditions.A clean layout makes the weather easy to read.The one-box design helps users focus on important details.It works smoothly even on slow internet.The app can automatically detect the user’s location.Any city’s weather can be searched manually.The app loads quickly on all types of devices.This one-box weather app makes checking the weather simple and fast.</p>
+    <a href="#">OPEN</a>
+  </div>
+</div>
+
+<script>
+// ===== Slider =====
+let slideIndex = 0;
+const slides = document.querySelectorAll(".slide");
+const slidesContainer = document.getElementById("slides");
+const dotsContainer = document.getElementById("dots");
+slides.forEach((_,i)=>{
+  let dot=document.createElement("span");
+  dot.classList.add("dot");
+  if(i===0) dot.classList.add("active");
+  dot.addEventListener("click",()=>{slideIndex=i; showSlide(slideIndex);});
+  dotsContainer.appendChild(dot);
+});
+const dots=document.querySelectorAll(".dot");
+function showSlide(index){
+  slidesContainer.style.transform=`translateX(-${index*100}%)`;
+  dots.forEach(dot=>dot.classList.remove("active"));
+  dots[index].classList.add("active");
+}
+setInterval(()=>{slideIndex=(slideIndex+1)%slides.length; showSlide(slideIndex);},5000);
+
+// ===== Typewriter =====
+const sentences=["OneBox aap ko aik hi jagah woh sab kuch deta hai jo aap rozana istemaal karte hain. Ab aap ko alag-alag apps install karne, storage bharne ya links yaad rakhne ki zaroorat nahi.", 
+  "OneBox main aap ke favourite tools, important links, social apps, gaming portals, earning platforms, news websites, education content aur rozmarra ki zaroori services ek hi screen par maujood hoti hain."];
+let currentSentence=0, charIndex=0;
+const textElement=document.getElementById("animatedText");
+function type(){ if(charIndex<sentences[currentSentence].length){ textElement.textContent+=sentences[currentSentence].charAt(charIndex++); setTimeout(type,70);} else setTimeout(erase,1500);}
+function erase(){ if(charIndex>0){ textElement.textContent=sentences[currentSentence].substring(0,--charIndex); setTimeout(erase,30);} else{ currentSentence=(currentSentence+1)%sentences.length; setTimeout(type,500);}}
+document.addEventListener("DOMContentLoaded",()=>setTimeout(type,500));
+
+// ===== Search Highlight with Scroll Back =====
+const searchInput=document.getElementById("searchInput");
+const suggestions=document.getElementById("suggestions");
+const categories=document.querySelectorAll(".category");
+let words=[], originalContent=[];
+categories.forEach(cat=>{originalContent.push(cat.innerHTML); cat.querySelectorAll("*").forEach(n=>{if(n.children.length===0 && n.innerText) words.push(...n.innerText.split(" "));});});
+searchInput.addEventListener("input",()=>{
+  let query=searchInput.value.toLowerCase(); suggestions.innerHTML="";
+  if(query.length>0){
+    let filtered=[...new Set(words.filter(w=>w.toLowerCase().startsWith(query)))];
+    filtered.forEach(word=>{
+      let div=document.createElement("div"); div.innerText=word;
+      div.onclick=()=>{searchInput.value=word;suggestions.innerHTML=""; highlightAndScroll(word);}
+      suggestions.appendChild(div);
+    });
+  }
+});
+function highlightAndScroll(searchText){
+  let matches=[];
+  categories.forEach((cat,i)=>{
+    cat.innerHTML = originalContent[i];
+    if(searchText){
+      let regex = new RegExp(`(${searchText})`,"gi");
+      cat.querySelectorAll("*").forEach(node=>{
+        if(node.children.length===0 && node.innerText){
+          node.innerHTML = node.innerText.replace(regex,'<span class="highlight">$1</span>');
+        }
+      });
+    }
+    matches.push(...cat.querySelectorAll(".highlight"));
+  });
+
+  if(matches.length === 0){ alert("No match found!"); return; }
+
+  const originalScroll = window.scrollY || window.pageYOffset;
+
+  // Sort alphabetically
+  matches.sort((a,b)=>a.innerText.localeCompare(b.innerText));
+
+  let index = 0;
+  function scrollNext(){
+    if(index>=matches.length){
+      alert(`Total ${matches.length} match(es) found!`);
+      window.scrollTo({top: originalScroll, behavior: 'smooth'});
+      return;
+    }
+    const match = matches[index];
+    match.scrollIntoView({behavior:"smooth", block:"center"});
+    match.style.transition = "background 0.3s";
+    match.style.background = "yellow";
+    setTimeout(()=>{ match.style.background=""; }, 2000);
+    index++;
+    setTimeout(scrollNext, 2500);
+  }
+  scrollNext();
+}
+document.getElementById("searchBtn").addEventListener("click",()=>highlightAndScroll(searchInput.value.trim()));
+document.getElementById("clearBtn").addEventListener("click",()=>{
+  searchInput.value=""; suggestions.innerHTML="";
+  categories.forEach((cat,i)=>cat.innerHTML=originalContent[i]);
+});
+</script>
+</body>
+</html>
